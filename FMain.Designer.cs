@@ -37,6 +37,7 @@
             this.правкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сервисToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выбратьБДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.заполнитьТаблицуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTableView)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -97,6 +98,8 @@
             // 
             // правкаToolStripMenuItem
             // 
+            this.правкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.заполнитьТаблицуToolStripMenuItem});
             this.правкаToolStripMenuItem.Name = "правкаToolStripMenuItem";
             this.правкаToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.правкаToolStripMenuItem.Text = "Правка";
@@ -114,6 +117,13 @@
             this.выбратьБДToolStripMenuItem.Name = "выбратьБДToolStripMenuItem";
             this.выбратьБДToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.выбратьБДToolStripMenuItem.Text = "Выбрать БД";
+            // 
+            // заполнитьТаблицуToolStripMenuItem
+            // 
+            this.заполнитьТаблицуToolStripMenuItem.Name = "заполнитьТаблицуToolStripMenuItem";
+            this.заполнитьТаблицуToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.заполнитьТаблицуToolStripMenuItem.Text = "Заполнить таблицу";
+            this.заполнитьТаблицуToolStripMenuItem.Click += new System.EventHandler(this.заполнитьТаблицуToolStripMenuItem_Click);
             // 
             // FMain
             // 
@@ -147,6 +157,7 @@
         private System.Windows.Forms.ToolStripMenuItem правкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сервисToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выбратьБДToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem заполнитьТаблицуToolStripMenuItem;
     }
 }
 

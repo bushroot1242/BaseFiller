@@ -90,6 +90,20 @@ namespace BaseFiller.Connections
             }
             return table;
         }
+        /// <summary>
+        /// Получить список пользовательских таблиц
+        /// </summary>
+        /// <returns></returns>
+        public static string[] getUserTablesMass()
+        {
+            DataTable table = SQLWorks.ExecuteQuery("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME != 'sysdiagrams'");
+            //string s = string.Join(" ",table.Rows.Cast<DataRow>().Select(row => row["TABLE_NAME"].ToString()).ToArray());
+            string[] hardNames = table.Rows.Cast<DataRow>().Select(row => row["TABLE_NAME"].ToString()).ToArray();
+            // string[] fn = hardNames.Select(s => SQlToHumanTranslater.Translate(s)).ToArray();
+            // List<string> friendlyNames = new List<string>(hardNames.Select(s =>SQlToHumanTranslater.Translate(s)).ToArray());
+            return hardNames.Select(s => s).ToArray();
+
+        }
     }
 }
 

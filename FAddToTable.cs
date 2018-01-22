@@ -12,9 +12,19 @@ namespace BaseFiller
 {
     public partial class FAddToTable : Form
     {
-        public FAddToTable()
+        private FAddToTable()
         {
             InitializeComponent();
         }
+
+        private static FAddToTable addForm;
+
+        public static FAddToTable getAddForm()
+        {
+            if (addForm == null)
+                addForm = new FAddToTable();
+            return addForm;
+        }
+
     }
 }

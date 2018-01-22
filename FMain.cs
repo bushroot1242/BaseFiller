@@ -23,8 +23,15 @@ namespace BaseFiller
             InitializeComponent();
             try
             {
-                using (FWait wait = new FWait(new Action(() => getTablesList())))
+                string[] hardNames;
+                using (FWait wait = new FWait(new Action(() =>
+                {
+                    hardNames  = SQLWorks.getUserTablesMass();
+                    cbTablesList.Items.AddRange(hardNames.Select(s => SQlToHumanTranslater.TranslateToHuman(s)).ToArray());
+                })))
+                {
                     wait.ShowDialog(this);
+                }
                 cbTablesList.SelectedIndex = 0;
 
                 string mas = string.Join(",",AllColumnsOfTables());
@@ -48,32 +55,8 @@ namespace BaseFiller
             DataTable table = SQLWorks.ExecuteQuery("SELECT DISTINCT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS where table_name <> 'sysdiagrams'");
             return table.Rows.Cast<DataRow>().Select(r => r[0].ToString()).ToArray();
         }
-        void getTablesList()
-        {
-            try
-            {
-                DataTable table = SQLWorks.ExecuteQuery("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME != 'sysdiagrams'");
 
-                
-                
-                //string s = string.Join(" ",table.Rows.Cast<DataRow>().Select(row => row["TABLE_NAME"].ToString()).ToArray());
-
-                string[] hardNames = table.Rows.Cast<DataRow>().Select(row => row["TABLE_NAME"].ToString()).ToArray();
-
-
-
-               // string[] fn = hardNames.Select(s => SQlToHumanTranslater.Translate(s)).ToArray();
-
-               // List<string> friendlyNames = new List<string>(hardNames.Select(s =>SQlToHumanTranslater.Translate(s)).ToArray());
-
-                cbTablesList.Items.AddRange(hardNames.Select(s => SQlToHumanTranslater.TranslateToHuman(s)).ToArray());
-
-            }
-            catch (Exception e)
-            {
-                DisplayStatus(e.Message);
-            }
-        }
+       
 
         
         private void butGetAdress_Click(object sender, EventArgs e)
@@ -172,6 +155,10 @@ namespace BaseFiller
             }
             
         }
-        
+
+        private void заполнитьТаблицуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FAddToTable.getAddForm().ShowDialog();
+        }
     }
 }
