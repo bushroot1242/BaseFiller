@@ -10,6 +10,7 @@ namespace BaseFiller.Connections
 {
     class SQLWorks
     {
+        //в перспективе заменить на динамическое формирование
         private static string connectionString = @"Data Source=NTC-IT-DIR\INVENTARY;Initial Catalog=Inventary;Integrated Security=true;";
 
         /// <summary>

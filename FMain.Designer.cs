@@ -28,14 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.butGetAdress = new System.Windows.Forms.Button();
-            this.tbPcName = new System.Windows.Forms.TextBox();
-            this.tbAdress = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.ssConsole = new System.Windows.Forms.ToolStripStatusLabel();
-            this.cbAvailableSQLInstaces = new System.Windows.Forms.ComboBox();
             this.dgvTableView = new System.Windows.Forms.DataGridView();
-            this.cbAvailablServers = new System.Windows.Forms.ComboBox();
             this.cbTablesList = new System.Windows.Forms.ComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,31 +41,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTableView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // butGetAdress
-            // 
-            this.butGetAdress.Location = new System.Drawing.Point(487, 353);
-            this.butGetAdress.Name = "butGetAdress";
-            this.butGetAdress.Size = new System.Drawing.Size(75, 23);
-            this.butGetAdress.TabIndex = 0;
-            this.butGetAdress.Text = "Получить адресс";
-            this.butGetAdress.UseVisualStyleBackColor = true;
-            this.butGetAdress.Click += new System.EventHandler(this.butGetAdress_Click);
-            // 
-            // tbPcName
-            // 
-            this.tbPcName.Location = new System.Drawing.Point(12, 434);
-            this.tbPcName.Name = "tbPcName";
-            this.tbPcName.Size = new System.Drawing.Size(334, 20);
-            this.tbPcName.TabIndex = 1;
-            // 
-            // tbAdress
-            // 
-            this.tbAdress.Location = new System.Drawing.Point(12, 373);
-            this.tbAdress.Multiline = true;
-            this.tbAdress.Name = "tbAdress";
-            this.tbAdress.Size = new System.Drawing.Size(334, 27);
-            this.tbAdress.TabIndex = 2;
             // 
             // statusStrip1
             // 
@@ -90,29 +60,13 @@
             this.ssConsole.Spring = true;
             this.ssConsole.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             // 
-            // cbAvailableSQLInstaces
-            // 
-            this.cbAvailableSQLInstaces.FormattingEnabled = true;
-            this.cbAvailableSQLInstaces.Location = new System.Drawing.Point(27, 229);
-            this.cbAvailableSQLInstaces.Name = "cbAvailableSQLInstaces";
-            this.cbAvailableSQLInstaces.Size = new System.Drawing.Size(227, 21);
-            this.cbAvailableSQLInstaces.TabIndex = 4;
-            // 
             // dgvTableView
             // 
             this.dgvTableView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTableView.Location = new System.Drawing.Point(312, 81);
+            this.dgvTableView.Location = new System.Drawing.Point(27, 117);
             this.dgvTableView.Name = "dgvTableView";
-            this.dgvTableView.Size = new System.Drawing.Size(536, 247);
+            this.dgvTableView.Size = new System.Drawing.Size(821, 383);
             this.dgvTableView.TabIndex = 5;
-            // 
-            // cbAvailablServers
-            // 
-            this.cbAvailablServers.FormattingEnabled = true;
-            this.cbAvailablServers.Location = new System.Drawing.Point(26, 270);
-            this.cbAvailablServers.Name = "cbAvailablServers";
-            this.cbAvailablServers.Size = new System.Drawing.Size(227, 21);
-            this.cbAvailablServers.TabIndex = 6;
             // 
             // cbTablesList
             // 
@@ -158,7 +112,7 @@
             // выбратьБДToolStripMenuItem
             // 
             this.выбратьБДToolStripMenuItem.Name = "выбратьБДToolStripMenuItem";
-            this.выбратьБДToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.выбратьБДToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.выбратьБДToolStripMenuItem.Text = "Выбрать БД";
             // 
             // FMain
@@ -167,14 +121,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 541);
             this.Controls.Add(this.cbTablesList);
-            this.Controls.Add(this.cbAvailablServers);
             this.Controls.Add(this.dgvTableView);
-            this.Controls.Add(this.cbAvailableSQLInstaces);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.tbAdress);
-            this.Controls.Add(this.tbPcName);
-            this.Controls.Add(this.butGetAdress);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FMain";
             this.Text = "Form1";
@@ -189,15 +138,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button butGetAdress;
-        private System.Windows.Forms.TextBox tbPcName;
-        private System.Windows.Forms.TextBox tbAdress;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel ssConsole;
-        private System.Windows.Forms.ComboBox cbAvailableSQLInstaces;
         private System.Windows.Forms.DataGridView dgvTableView;
-        private System.Windows.Forms.ComboBox cbAvailablServers;
         private System.Windows.Forms.ComboBox cbTablesList;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem менюToolStripMenuItem;

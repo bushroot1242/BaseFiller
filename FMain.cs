@@ -26,22 +26,41 @@ namespace BaseFiller
                 using (FWait wait = new FWait(new Action(() => getTablesList())))
                     wait.ShowDialog(this);
                 cbTablesList.SelectedIndex = 0;
+
+                string mas = string.Join(",",AllColumnsOfTables());
+
             }
             catch(Exception e)
             {
                 DisplayStatus(e.Message);
             }
         }
+       
 
+        string[] ColumnsOfTable(string tableName)
+        {
+            DataTable table = SQLWorks.ExecuteQuery("SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS");
+            return table.Rows.Cast<DataRow>().Select(r => r[0].ToString()).ToArray();
+        }
+
+        string[] AllColumnsOfTables()
+        {
+            DataTable table = SQLWorks.ExecuteQuery("SELECT DISTINCT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS where table_name <> 'sysdiagrams'");
+            return table.Rows.Cast<DataRow>().Select(r => r[0].ToString()).ToArray();
+        }
         void getTablesList()
         {
             try
             {
                 DataTable table = SQLWorks.ExecuteQuery("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME != 'sysdiagrams'");
 
+                
+                
                 //string s = string.Join(" ",table.Rows.Cast<DataRow>().Select(row => row["TABLE_NAME"].ToString()).ToArray());
 
                 string[] hardNames = table.Rows.Cast<DataRow>().Select(row => row["TABLE_NAME"].ToString()).ToArray();
+
+
 
                // string[] fn = hardNames.Select(s => SQlToHumanTranslater.Translate(s)).ToArray();
 
@@ -56,6 +75,7 @@ namespace BaseFiller
             }
         }
 
+        
         private void butGetAdress_Click(object sender, EventArgs e)
         {
             try
@@ -99,13 +119,12 @@ namespace BaseFiller
 
         private void cbTablesList_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-
             try
             {
-                string  ((ComboBox)sender).Text)
-                DataTable table = SQLWorks.ExecuteQuery(string.Format("SELECT * FROM {0}", );
+               
+                DataTable table = SQLWorks.ExecuteQuery(string.Format("SELECT * FROM {0}", SQlToHumanTranslater.TranslateToSQL(((ComboBox)sender).Text)));
                 dgvTableView.DataSource = table;
+                DataTableDecorator();
             }
            
             catch (Exception ex)
@@ -141,6 +160,17 @@ namespace BaseFiller
         void DisplayStatus(string status)
         {
             ssConsole.Text = status;
+        }
+        void DataTableDecorator()
+        {
+            int colSize = dgvTableView.Width/dgvTableView.Columns.Count;
+            foreach (DataGridViewColumn col in dgvTableView.Columns)
+            {
+                col.Width = colSize;
+                col.HeaderText = SQlToHumanTranslater.TranslateToHuman(col.HeaderText);
+
+            }
+            
         }
         
     }

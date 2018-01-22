@@ -14,6 +14,8 @@ namespace BaseFiller.View
         static SQlToHumanTranslater()
         {
             //заполнение словаря сделать сериализацией из файла
+            
+            //имена таблиц
             dictionary = new Dictionary<string, string>();
             dictionary.Add("PCUser", "Пользователь - компьютер");
             dictionary.Add("PcManufacturer", "Производители ПК");
@@ -46,6 +48,52 @@ namespace BaseFiller.View
             dictionary.Add("Monitors", "Мониторы");
             dictionary.Add("Modernization", "Апгрейд");
             dictionary.Add("Laptops", "Ноутбуки");
+
+
+            //тут начинаются поля таблиц, всех
+            dictionary.Add("Account", "Аккаунт");
+            dictionary.Add("ComputerName", "Имя компьютера");
+            dictionary.Add("ConfigurationId", "ИД Конфигурации");
+            dictionary.Add("CPUId", "ИД ЦПУ");
+            dictionary.Add("Date", "Дата");
+            dictionary.Add("DepartamentId", "ИД Департамента");
+            dictionary.Add("FathersName", "Отчество");
+            dictionary.Add("FinishData", "Дата окончания");
+            dictionary.Add("GPUId", "ИД ГПУ");
+            dictionary.Add("HddId", "ИД ЖД");
+            dictionary.Add("Id", "ИД");
+            dictionary.Add("IdOs", "ИД ОС");
+            dictionary.Add("IDPC", "ИД ПК");
+            dictionary.Add("IDUser", "ИД Пользователя");
+            dictionary.Add("InventaryNumber", "Инвентаризационный номер");
+            dictionary.Add("IsMan", "Пол");
+            dictionary.Add("Manufacturer", "Производитель");
+            dictionary.Add("ManufacturerId", "ИД  Производителя");
+            dictionary.Add("Model", "Модель");
+            dictionary.Add("ModelId", "ИД Модели");
+            dictionary.Add("MonitorId", "ИД Монитора");
+            dictionary.Add("MotherboardId", "ИД Мат. Платы");
+            dictionary.Add("Name", "Имя");
+            dictionary.Add("NewConfig", "Новая конфигурация");
+            dictionary.Add("OldConfigId", "Старая конфигурация");
+            dictionary.Add("PersonalNumber", "Табельный номер");
+            dictionary.Add("PostId", "ИД Должности");
+            dictionary.Add("RamId", "ИД ОЗУ");
+            dictionary.Add("ReplaceDate", "Дата переустановки");
+            dictionary.Add("ResponsiblePersonId", "ИД ответственного лица");
+            dictionary.Add("Room", "Кабинет");
+            dictionary.Add("SerialNumber", "Серийный номер");
+            dictionary.Add("SocketNumber", "Сокет");
+            dictionary.Add("StartData", "Дата начала");
+            dictionary.Add("Status", "Статус");
+            dictionary.Add("StatusRepearID", "ИД статуса ремонта");
+            dictionary.Add("Surname", "Фамилия");
+            dictionary.Add("Type", "Тип");
+            dictionary.Add("TypeId", "ИД Типа");
+            dictionary.Add("TypeRepearID", "ИД Типа ремонта");
+            dictionary.Add("UnitId", "ИД Подразделения");
+            dictionary.Add("Volume", "Объем");
+
 
 
         }

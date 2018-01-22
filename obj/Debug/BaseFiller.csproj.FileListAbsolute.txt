@@ -19,3 +19,4 @@ C:\Users\dilmukhametovir\Desktop\repos\BaseFiller\BaseFiller\obj\Debug\BaseFille
 C:\Users\dilmukhametovir\Desktop\repos\BaseFiller\BaseFiller\obj\Debug\BaseFiller.exe
 C:\Users\dilmukhametovir\Desktop\repos\BaseFiller\BaseFiller\obj\Debug\BaseFiller.pdb
 C:\Users\dilmukhametovir\Desktop\repos\BaseFiller\BaseFiller\obj\Debug\BaseFiller.FWait.resources
+C:\Users\dilmukhametovir\Desktop\repos\BaseFiller\BaseFiller\obj\Debug\BaseFiller.FAddToTable.resources
