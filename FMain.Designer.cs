@@ -68,6 +68,7 @@
             this.dgvTableView.Name = "dgvTableView";
             this.dgvTableView.Size = new System.Drawing.Size(821, 383);
             this.dgvTableView.TabIndex = 5;
+            this.dgvTableView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvTableView_RowsAdded);
             // 
             // cbTablesList
             // 

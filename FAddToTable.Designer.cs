@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(850, 389);
+            this.ClientSize = new System.Drawing.Size(811, 497);
             this.Name = "FAddToTable";
             this.Text = "Форма добавления";
             this.ResumeLayout(false);

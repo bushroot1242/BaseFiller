@@ -94,8 +94,10 @@ namespace BaseFiller.Connections
         /// Получить список пользовательских таблиц
         /// </summary>
         /// <returns></returns>
-        public static string[] getUserTablesMass()
+        public static string[] getUserTablesNames()
         {
+            
+
             DataTable table = SQLWorks.ExecuteQuery("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME != 'sysdiagrams'");
             //string s = string.Join(" ",table.Rows.Cast<DataRow>().Select(row => row["TABLE_NAME"].ToString()).ToArray());
             string[] hardNames = table.Rows.Cast<DataRow>().Select(row => row["TABLE_NAME"].ToString()).ToArray();

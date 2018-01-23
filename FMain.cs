@@ -21,12 +21,14 @@ namespace BaseFiller
         public FMain()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Инвентаризация";
             try
             {
                 string[] hardNames;
                 using (FWait wait = new FWait(new Action(() =>
                 {
-                    hardNames  = SQLWorks.getUserTablesMass();
+                    hardNames  = SQLWorks.getUserTablesNames();
                     cbTablesList.Items.AddRange(hardNames.Select(s => SQlToHumanTranslater.TranslateToHuman(s)).ToArray());
                 })))
                 {
@@ -158,7 +160,12 @@ namespace BaseFiller
 
         private void заполнитьТаблицуToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FAddToTable.getAddForm().ShowDialog();
+            FAddToTable.getAddForm(SQlToHumanTranslater.TranslateToSQL(cbTablesList.Text)).ShowDialog();
+        }
+
+        private void dgvTableView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            dgvTableView.Rows[e.RowIndex].HeaderCell.Value = e.RowCount;
         }
     }
 }
