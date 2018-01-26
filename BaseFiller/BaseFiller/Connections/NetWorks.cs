@@ -13,25 +13,40 @@ using System.Threading;
 
 namespace BaseFiller.Connections
 {
+    /// <summary>
+    /// В перспективе для универсализации работы с удаленным сервером SQL
+    /// </summary>
     public static class NetWorks
     {
-        private static DataTable dataTable;
+        private static DataTable dataTable;//буферная табличка
         static NetWorks()
         {
-            SqlDataSourceEnumerator instance = SqlDataSourceEnumerator.Instance;
+            SqlDataSourceEnumerator instance = SqlDataSourceEnumerator.Instance;//получает все экземпляры SQL серверов В сети
             dataTable = instance.GetDataSources();
         }
 
-       
+        /// <summary>
+        /// Вычислить IP по имени
+        /// </summary>
+        /// <param name="hostName"> имя компа</param>
+        /// <returns></returns>
         public static string ServersIp(string hostName)
         {
             return ((IPAddress)(Dns.GetHostAddresses(hostName)[0])).ToString();
         }
+
+        /// <summary>
+        /// Вычислить имя по IP
+        /// </summary>
+        /// <param name="ip"> ip адрес</param>
+        /// <returns></returns>
         public static string ServersName(IPAddress ip)
         {
             return Dns.GetHostEntry(ip).HostName;
         }
-
+        /// <summary>
+        /// Массив имен SQL серверов
+        /// </summary>
         public static string[] SQLServerNames
         {
             get
@@ -66,6 +81,11 @@ namespace BaseFiller.Connections
             }
             return mas;
         }
+        /// <summary>
+        /// Получить список экземпляров БД с сервера
+        /// </summary>
+        /// <param name="serverName">Имя сервера</param>
+        /// <returns></returns>
         public static string[] GetSQLInstance(string serverName)
         {
 
